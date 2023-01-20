@@ -33,4 +33,4 @@ df_jugadores_normalizado = std_scaler.fit_transform(df_estadisticas.values)
 df_jugadores_normalizado = pd.DataFrame(df_jugadores_normalizado, columns=df_estadisticas.columns)
 df_jugadores_normalizado
 
-print("Prueba")
+print("Prueba2")
