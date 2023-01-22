@@ -32,5 +32,3 @@ df_estadisticas = df_jugadores.iloc[:, 2:] #Del dataset utilizo como variables a
 df_jugadores_normalizado = std_scaler.fit_transform(df_estadisticas.values)
 df_jugadores_normalizado = pd.DataFrame(df_jugadores_normalizado, columns=df_estadisticas.columns)
 df_jugadores_normalizado
-
-print("Prueba2")
