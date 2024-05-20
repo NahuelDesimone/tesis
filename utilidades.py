@@ -3,11 +3,16 @@ import pandas as pd
 from sqlalchemy import sql
 from pca import pca
 
-def reducir_dimensionalidad_dataset():
+
+def conectar_db():
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:12345678@localhost/db_tesis'
     engine = db.create_engine(SQLALCHEMY_DATABASE_URI)
     connection = engine.connect()
+    return connection
 
+
+def reducir_dimensionalidad_dataset():
+    connection = conectar_db()
     dataset_jugadores = pd.read_sql("SELECT * from Jugadores", con=connection)
     df_jugadores = dataset_jugadores[["jugador_id","posicion"]]
 
